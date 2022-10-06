@@ -1,0 +1,32 @@
+@import "./core/scss/mixins.scss";
+
+// Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  /* 1 rem = 10px; 10px/16px = 62.5% */
+  font-size: 62.5%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  @include screenMd {
+    font-size: 56.25%;
+  }
+}
+
+// General style
+h1 {
+  font-size: 2.2rem;
+}

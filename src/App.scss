@@ -1,0 +1,53 @@
+@import "./core/scss/mixins.scss";
+@import "./core/scss/variables.scss";
+
+.app {
+  width: 100%;
+  height: 100vh;
+  @include flexCenter;
+  align-items: flex-start;
+
+  background-color: $veryLightGrayishBlue;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 70rem;
+  max-height: 90vh;
+  background-color: $White;
+  padding: 2.5rem 2rem;
+  margin-top: 5vh;
+  border-radius: 1.5rem;
+  overflow-y: auto;
+
+  box-shadow: 0 0.5rem 1.5rem -1rem #000;
+
+  @include screenMd {
+    margin-top: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  .notification-unread-count {
+    color: $White;
+    font-size: $fontSizeStd - 0.2rem;
+    font-weight: 500;
+    border-radius: 0.6rem;
+    padding: 0.2rem 0.9rem;
+    margin-left: 1rem;
+    background-color: $primary;
+  }
+
+  .mark-all-read {
+    font-size: $fontSizeStd;
+    opacity: 0.8;
+    @include transitionOnHoverPrimary(opacity);
+  }
+}

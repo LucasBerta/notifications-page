@@ -1,0 +1,89 @@
+@import "../../core/scss/mixins.scss";
+@import "../../core/scss/variables.scss";
+
+.notification {
+  $avatarSize: 4.2rem;
+
+  &-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1.5rem;
+    font-size: $fontSizeStd;
+    border-radius: 1.2rem;
+
+    &:not(:last-child) {
+      margin-bottom: 0.8rem;
+    }
+
+    &:not(.read) {
+      background-color: $lightGrayishBlue1;
+    }
+
+    > *:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &-avatar {
+    width: $avatarSize;
+    height: $avatarSize;
+    border-radius: 50%;
+  }
+
+  &-interaction-container {
+    @include flexCenter;
+    flex-direction: column;
+    align-items: flex-start;
+
+    span:not(:last-child) {
+      margin-right: 0.4rem;
+    }
+
+    .notification--user-name {
+      display: inline-block;
+      font-weight: 800;
+      @include transitionOnHoverPrimary(opacity);
+    }
+
+    .notification--interaction {
+      color: $darkGrayishBlue;
+      opacity: 0.9;
+    }
+
+    .notification--link {
+      color: $darkGrayishBlue;
+      font-weight: 800;
+      @include transitionOnHoverPrimary(opacity);
+    }
+
+    .notification--not-read-symbol {
+      color: $accent;
+      font-size: $fontSizeStd * 1.5;
+      line-height: 0;
+    }
+
+    .notification--time {
+      color: $darkGrayishBlue;
+      opacity: 0.9;
+    }
+
+    .notification__message-container {
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      border: 1px solid $lightGrayishBlue2;
+      border-radius: 0.5rem;
+      color: $darkGrayishBlue;
+      @include transitionOnHover {
+        background-color: $lightGrayishBlue1;
+      }
+    }
+  }
+
+  &--picture {
+    width: $avatarSize;
+    height: $avatarSize;
+    margin-left: auto;
+    cursor: pointer;
+  }
+}

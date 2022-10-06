@@ -1,0 +1,28 @@
+@import "./variables.scss";
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin transitionOnHover($transition: all, $duration: 0.2s, $timing: ease-in-out) {
+  cursor: pointer;
+  transition: $transition $duration $timing;
+
+  &:hover {
+    @content;
+  }
+}
+
+@mixin transitionOnHoverPrimary($transition: all, $duration: 0.2s, $timing: ease-in-out) {
+  @include transitionOnHover($transition, $duration, $timing) {
+    color: $primary;
+  }
+}
+
+@mixin screenMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
